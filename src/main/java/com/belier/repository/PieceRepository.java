@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PieceRepository extends JpaRepository<Piece, Long> {
 
+    Page<Piece> findAllPageable(Pageable pageable);
 }
