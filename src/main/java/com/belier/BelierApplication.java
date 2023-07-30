@@ -7,11 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BelierApplication {
 
 	public static void main(String[] args) {
-		try {
-			SpringApplication.run(BelierApplication.class, args);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		SpringApplication.run(BelierApplication.class, args);
 	}
 
 }

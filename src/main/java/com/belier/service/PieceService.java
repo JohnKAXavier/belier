@@ -1,7 +1,9 @@
 package com.belier.service;
 
 import com.belier.domain.Piece;
+import com.belier.dto.PageablePieceDto;
 import com.belier.dto.PieceDto;
+import com.belier.mapper.PieceMapper;
 import com.belier.repository.PieceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,17 +19,15 @@ public class PieceService {
     @Autowired
     PieceRepository repository;
 
-    @Autowired
-    PieceDto pieceDto;
-
     public List<Piece> getAll(){
         return repository.findAll();
     }
 
-    public PieceDto getAllPageable(Integer page, Integer size){
+    public PageablePieceDto getAllPageable(Integer page, Integer size){
         Pageable pageable = PageRequest.of(page, size);
-        Page<Piece> piecePage = repository.findAllPageable(pageable);
-        return pieceDto.toPieceDto(piecePage.getContent(), piecePage.getNumber(), piecePage.getTotalElements(), piecePage.getTotalPages());
+        Page<Piece> piecePage = repository.findAll(pageable);
+
+        return PieceMapper.toPageablePieceDto(piecePage.getContent(), piecePage.getNumber(), piecePage.getTotalElements(), piecePage.getTotalPages());
     }
 
     public void create(Piece piece){
