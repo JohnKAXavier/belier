@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.belier</groupId>
 	<artifactId>belier</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<packaging>war</packaging>
 	<name>belier</name>
 	<description>Admin belier</description>
@@ -47,6 +47,14 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.24</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-mysql</artifactId>
 		</dependency>
 	</dependencies>
 
