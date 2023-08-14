@@ -3,6 +3,7 @@ package com.belier.controller;
 import com.belier.domain.Piece;
 import com.belier.dto.PageablePieceDto;
 import com.belier.dto.PieceDto;
+import com.belier.dto.SalesByMonthDto;
 import com.belier.service.PieceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,6 +53,12 @@ public class PieceController {
     public ResponseEntity delete(@PathVariable("id") Long id){
         pieceService.delete(id);
         return ResponseEntity.ok("Deleted");
+    }
+
+    @GetMapping("/sales-by-month")
+    public ResponseEntity getSalesByMonth(){
+        List<SalesByMonthDto> salesByMonthDtos = pieceService.getSalesByMonth();
+        return ResponseEntity.ok(salesByMonthDtos);
     }
 
 

@@ -3,6 +3,7 @@ package com.belier.service;
 import com.belier.domain.Piece;
 import com.belier.dto.PageablePieceDto;
 import com.belier.dto.PieceDto;
+import com.belier.dto.SalesByMonthDto;
 import com.belier.mapper.PieceMapper;
 import com.belier.repository.PieceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,13 @@ public class PieceService {
         piece.setNetValue(updatePiece.getNetValue());
         piece.setTransactionType(updatePiece.getTransactionType());
         piece.setPieceType(updatePiece.getPieceType());
+        piece.setBoughtAt(updatePiece.getBoughtAt());
+        piece.setSoldAt(updatePiece.getSoldAt());
 
         repository.save(piece);
+    }
+
+    public List<SalesByMonthDto> getSalesByMonth(){
+        return repository.getSalesByMonth();
     }
 }
