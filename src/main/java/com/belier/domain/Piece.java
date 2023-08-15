@@ -33,4 +33,8 @@ public class Piece {
 
     private LocalDateTime soldAt;
 
+    @Lob
+    @Column(columnDefinition = "BLOB")
+    private byte[] photo;
+
 }

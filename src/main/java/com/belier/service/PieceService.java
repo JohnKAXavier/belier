@@ -53,6 +53,7 @@ public class PieceService {
         piece.setPieceType(updatePiece.getPieceType());
         piece.setBoughtAt(updatePiece.getBoughtAt());
         piece.setSoldAt(updatePiece.getSoldAt());
+        piece.setPhoto(updatePiece.getPhoto());
 
         repository.save(piece);
     }

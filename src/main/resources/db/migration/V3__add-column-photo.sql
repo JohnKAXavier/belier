@@ -1,0 +1,1 @@
+alter table piece add column photo BLOB;

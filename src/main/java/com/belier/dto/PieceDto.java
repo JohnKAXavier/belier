@@ -15,5 +15,6 @@ public class PieceDto {
     private Double factoryPrice;
     private Double netValue;
     private TransactionType transactionType;
+    private byte[] photo;
 
 }
