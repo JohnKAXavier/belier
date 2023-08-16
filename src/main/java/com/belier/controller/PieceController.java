@@ -1,6 +1,7 @@
 package com.belier.controller;
 
 import com.belier.domain.Piece;
+import com.belier.dto.LastFewTransactionsDto;
 import com.belier.dto.PageablePieceDto;
 import com.belier.dto.PieceDto;
 import com.belier.dto.SalesByMonthDto;
@@ -59,6 +60,12 @@ public class PieceController {
     public ResponseEntity getSalesByMonth(){
         List<SalesByMonthDto> salesByMonthDtos = pieceService.getSalesByMonth();
         return ResponseEntity.ok(salesByMonthDtos);
+    }
+
+    @GetMapping("/last-few-transactions")
+    public ResponseEntity getLastFewTransactions(){
+        List<LastFewTransactionsDto> lastFewTransactionsDtos = pieceService.getLastFewTransactions();
+        return ResponseEntity.ok(lastFewTransactionsDtos);
     }
 
 

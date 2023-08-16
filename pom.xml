@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.belier</groupId>
 	<artifactId>belier</artifactId>
-	<version>1.4.0</version>
+	<version>1.5.0</version>
 	<packaging>war</packaging>
 	<name>belier</name>
 	<description>Admin belier</description>

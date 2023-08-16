@@ -1,6 +1,7 @@
 package com.belier.service;
 
 import com.belier.domain.Piece;
+import com.belier.dto.LastFewTransactionsDto;
 import com.belier.dto.PageablePieceDto;
 import com.belier.dto.PieceDto;
 import com.belier.dto.SalesByMonthDto;
@@ -60,5 +61,9 @@ public class PieceService {
 
     public List<SalesByMonthDto> getSalesByMonth(){
         return repository.getSalesByMonth();
+    }
+
+    public List<LastFewTransactionsDto> getLastFewTransactions(){
+        return repository.getLastFewTransctions();
     }
 }
