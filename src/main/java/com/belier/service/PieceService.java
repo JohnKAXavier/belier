@@ -3,7 +3,6 @@ package com.belier.service;
 import com.belier.domain.Piece;
 import com.belier.dto.LastFewTransactionsDto;
 import com.belier.dto.PageablePieceDto;
-import com.belier.dto.PieceDto;
 import com.belier.dto.SalesByMonthDto;
 import com.belier.mapper.PieceMapper;
 import com.belier.repository.PieceRepository;
@@ -50,20 +49,18 @@ public class PieceService {
         piece.setName(updatePiece.getName());
         piece.setFactoryPrice(updatePiece.getFactoryPrice());
         piece.setNetValue(updatePiece.getNetValue());
-        piece.setTransactionType(updatePiece.getTransactionType());
         piece.setPieceType(updatePiece.getPieceType());
         piece.setBoughtAt(updatePiece.getBoughtAt());
-        piece.setSoldAt(updatePiece.getSoldAt());
         piece.setPhoto(updatePiece.getPhoto());
 
         repository.save(piece);
     }
 
-    public List<SalesByMonthDto> getSalesByMonth(){
-        return repository.getSalesByMonth();
-    }
-
-    public List<LastFewTransactionsDto> getLastFewTransactions(){
-        return repository.getLastFewTransctions();
-    }
+//    public List<SalesByMonthDto> getSalesByMonth(){
+//        return repository.getSalesByMonth();
+//    }
+//
+//    public List<LastFewTransactionsDto> getLastFewTransactions(){
+//        return repository.getLastFewTransactions();
+//    }
 }

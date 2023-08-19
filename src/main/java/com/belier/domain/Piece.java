@@ -26,15 +26,12 @@ public class Piece {
 
     private Double netValue;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private TransactionType transactionType;
-
     private LocalDateTime boughtAt;
-
-    private LocalDateTime soldAt;
 
     @Lob
     @Column(columnDefinition = "BLOB")
     private byte[] photo;
+
+    private Long quantity;
 
 }
